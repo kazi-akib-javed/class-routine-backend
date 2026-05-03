@@ -1,0 +1,30 @@
+{
+  "semester_meta": {
+    "program": "H2 – Year 1",
+    "semester": 1,
+    "semester_start_cw": 15,
+    "semester_start_date": "2026-04-07",
+    "lecture_free_dates": [
+      "2026-05-01",
+      "2026-05-14",
+      "2026-05-15",
+      "2026-05-25"
+    ]
+  },
+  "time_blocks": {
+    "1": { "start": "08:15", "end": "09:45" },
+    "2": { "start": "10:00", "end": "11:30" },
+    "3": { "start": "11:45", "end": "13:15" },
+    "4": { "start": "14:00", "end": "15:30" },
+    "5": { "start": "15:45", "end": "17:15" },
+    "6": { "start": "17:30", "end": "19:00" }
+  },
+  "subjects": {},
+  "schedule": {
+    "odd_weeks": [],
+    "even_weeks": []
+  },
+  "nat_sci_schedule": {
+    "weekly_plan": []
+  }
+}
