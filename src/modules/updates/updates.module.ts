@@ -14,6 +14,6 @@ import { OVERRIDE_REPOSITORY_TOKEN } from './domain/repositories/override.reposi
     PostOverrideUseCase,
     ClearOverrideUseCase,
   ],
-  exports: [],
+  exports: [OVERRIDE_REPOSITORY_TOKEN],
 })
 export class UpdatesModule {}
