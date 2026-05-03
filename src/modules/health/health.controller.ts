@@ -1,4 +1,5 @@
 import { Controller, Get, Inject } from '@nestjs/common';
+import { ApiTags, ApiOperation } from '@nestjs/swagger';
 import {
   IScheduleRepository,
   SCHEDULE_REPOSITORY_TOKEN,
@@ -12,6 +13,7 @@ import {
   OVERRIDE_REPOSITORY_TOKEN,
 } from '../updates/domain/repositories/override.repository.interface';
 
+@ApiTags('health')
 @Controller('health')
 export class HealthController {
   constructor(
@@ -23,6 +25,7 @@ export class HealthController {
     private readonly overrideRepository: IOverrideRepository,
   ) {}
 
+  @ApiOperation({ summary: 'System health check with live counts from all repositories' })
   @Get()
   async getHealth() {
     const scheduleEntries = await this.scheduleRepository.findAll();
