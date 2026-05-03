@@ -7,6 +7,7 @@ import {
 } from '@nestjs/common';
 import { Request, Response } from 'express';
 import { EntryNotFoundException } from '../../modules/schedule/domain/exceptions/entry-not-found.exception';
+import { NatSciWeekNotFoundException } from '../../modules/natsci/domain/exceptions/natsci-week-not-found.exception';
 
 @Catch()
 export class HttpExceptionFilter implements ExceptionFilter {
@@ -18,9 +19,12 @@ export class HttpExceptionFilter implements ExceptionFilter {
     let status: number;
     let message: string;
 
-    if (exception instanceof EntryNotFoundException) {
+    if (
+      exception instanceof EntryNotFoundException ||
+      exception instanceof NatSciWeekNotFoundException
+    ) {
       status = HttpStatus.NOT_FOUND;
-      message = exception.message;
+      message = (exception as Error).message;
     } else if (exception instanceof HttpException) {
       status = exception.getStatus();
       const body = exception.getResponse();
