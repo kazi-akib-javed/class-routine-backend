@@ -15,6 +15,6 @@ import { SCHEDULE_REPOSITORY_TOKEN } from './domain/repositories/schedule.reposi
     ResolveDayUseCase,
     ResolveWeekUseCase,
   ],
-  exports: [ResolveDayUseCase, ResolveWeekUseCase],
+  exports: [ResolveDayUseCase, ResolveWeekUseCase, SCHEDULE_REPOSITORY_TOKEN],
 })
 export class ScheduleModule {}
