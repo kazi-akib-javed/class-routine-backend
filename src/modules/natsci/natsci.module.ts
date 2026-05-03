@@ -11,6 +11,6 @@ import { NATSCI_REPOSITORY_TOKEN } from './domain/repositories/natsci.repository
     { provide: NATSCI_REPOSITORY_TOKEN, useClass: JsonNatSciRepository },
     ResolveNatSciUseCase,
   ],
-  exports: [],
+  exports: [NATSCI_REPOSITORY_TOKEN],
 })
 export class NatSciModule {}
